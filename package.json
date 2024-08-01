@@ -1,6 +1,6 @@
 {
   "name": "vscl",
-  "version": "2.2.1",
+  "version": "2.2.2",
   "description": "Helpers and types for the VSCode Links extension.",
   "type": "module",
   "main": "build/index.js",
