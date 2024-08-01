@@ -46,7 +46,36 @@ export type VSCLLinkHandlerResponse = {
    * The regex pattern or sub string to jump to within the target file.
    */
   jumpPattern?: RegExp | string;
+  /**
+   * The markdown-supported description to show when you hover over the link.
+   */
+  description?: string;
+  /**
+   * An array of additional buttons/links to show when you hover over the link.
+   */
+  buttons?: VSCLLinkButton[];
 };
+export type VSCLLinkButton =
+  | {
+      /**
+       * The text to show on the button.
+       */
+      title: string;
+      /**
+       * The file or http link to open. Note that on windows use `file:///` instead of `file://`.
+       */
+      target: string;
+    }
+  | {
+      /**
+       * The text to show on the button.
+       */
+      title: string;
+      /**
+       * The function to call when the button is clicked. Can be used to copy text to the clipboard, for example.
+       */
+      action: () => void | Promise<void>;
+    };
 export type VSCLLinkHandlerOptions = {
   /**
    * The text of the pattern-matched link.
@@ -68,6 +97,11 @@ export type VSCLLinkHandlerOptions = {
    * workspace`C:/Users/user/projects/my-project/src/file.ts` // Results in: file:///C:/Users/user/projects/my-project/src/file.ts
    */
   file: (strings: TemplateStringsArray, ...values: string[]) => string;
+
+  /**
+   * This function can be used to log messages to the "VSCode Links" output channel.
+   */
+  log: (...logs: any[]) => void;
 };
 
 export type Config = VSCLConfig;
