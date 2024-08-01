@@ -3,6 +3,10 @@ export type VSCLConfig = {
    * Specify the links to be handled by the extension.
    */
   links: VSCLLink[];
+  /**
+   * Extend from other configuration files.
+   */
+  extends: string | string[];
 };
 
 export type VSCLLink = {
