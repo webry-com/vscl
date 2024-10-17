@@ -6,7 +6,7 @@ export type VSCLConfig = {
   /**
    * Extend from other configuration files.
    */
-  extends: string | string[];
+  extends?: string | string[];
 };
 
 export type VSCLLink = {
