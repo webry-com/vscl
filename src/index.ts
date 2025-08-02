@@ -106,6 +106,11 @@ export type VSCLLinkHandlerOptions = {
    * This function can be used to log messages to the "VSCode Links" output channel.
    */
   log: (...logs: any[]) => void;
+
+  /**
+   * This function can be used to reload the config and all links.
+   */
+  reload: () => void;
 };
 
 export type Config = VSCLConfig;

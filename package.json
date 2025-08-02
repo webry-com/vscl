@@ -1,6 +1,6 @@
 {
   "name": "vscl",
-  "version": "2.2.3",
+  "version": "2.3.0",
   "description": "Helpers and types for the VSCode Links extension.",
   "type": "module",
   "main": "build/index.js",
@@ -16,8 +16,7 @@
   "scripts": {
     "dev": "tsc -p tsconfig.json -w",
     "build": "tsc -p tsconfig.json",
-    "fix": "run-s fix:*",
-    "fix:prettier": "prettier \"src/**/*.ts\" --write"
+    "fix": "prettier \"src/**/*.ts\" --write"
   },
   "engines": {
     "node": ">=16"
